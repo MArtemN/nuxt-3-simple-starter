@@ -1,11 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	devtools: {
-		enabled: true,
-	},
+	compatibilityDate: '2024-04-03',
+
+	devtools: { enabled: true },
+
+	modules: ['@pinia/nuxt', '@nuxt/eslint'],
+
+	css: ['@/assets/styles/main.scss'],
+
 	typescript: {
 		typeCheck: true,
 	},
-	css: ['@/assets/styles/main.scss'],
-	modules: ['@nuxt/eslint', '@pinia/nuxt', '@nuxtjs/tailwindcss', 'nuxt-swiper'],
+
+	eslint: {
+		checker: true,
+	},
 })
