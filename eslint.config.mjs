@@ -1,6 +1,6 @@
 import withNuxt from "./.nuxt/eslint.config.mjs";
 
-export default withNuxt().override("nuxt/typescript/rules", {
+export default withNuxt({
 	rules: {
 		"vue/html-self-closing": [
 			"error",
@@ -14,5 +14,12 @@ export default withNuxt().override("nuxt/typescript/rules", {
 				math: "always",
 			},
 		],
+		'vue/block-order': [
+			'error',
+			{
+				order: ['script[setup]', 'template', 'style'],
+			},
+		],
+		'no-console': ['error', { allow: ['warn', 'error'] }],
 	},
 });
